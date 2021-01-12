@@ -1,14 +1,14 @@
 const mongoose = require("mongoose")
 
-const config = {
-	autoIndex: false,
-	useNewUrlParser: true,
-};
-const uri = 'mongodb://localhost/XsSupport'
+//const config = {
+//	autoIndex: false,
+//	useNewUrlParser: true,
+//};
+//const uri = 'mongodb://localhost/XsSupport'
 const connectDB = async () => {
 	try {
 
-		await mongoose.connect(uri, config)
+		await mongoose.connect('mongodb+srv://raja:raja@tarar.sinqh.mongodb.net/<dbname>?retryWrites=true&w=majority', {useNewUrlParser:true})
 			.then(() => {
 				console.log('Now you are connected to MongoDB DataBase...')
 			})
