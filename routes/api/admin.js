@@ -101,6 +101,7 @@ else
 });
 
 // Admin log-in fr-
+// Admin log-in fr-
 router.post('/login', async ( req , res ) => {
 
     // validate Schema
@@ -119,14 +120,21 @@ router.post('/login', async ( req , res ) => {
             res.status().send("Invalid email and password")
         }
         else{
-        const token = setToken(user._id, user.email, user.isAdmin, user.isApproved)
-        res
-            .header("x-auth-token", token)
-            .header("access-control-expose-headers", "x-auth-token")
-            .send(token)         
-            .status(200)
+            try {
+                const token = setToken(user._id, user.email, user.isAdmin, user.isApproved)
+                res
+                    .header("x-auth-token", token)
+                    .header("access-control-expose-headers", "x-auth-token")
+                    .send(token)         
+                    .status(200)
+                    
+                }
+                catch (error) {
+                    console.log(error);
+                }
+           
+            } 
             
-        }
     }
     else{
         res.status(400).send("No Registered Admin exists")
