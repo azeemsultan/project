@@ -56,7 +56,7 @@ router.post("/signup", async (req,res) => {
 
 
     let date= new Date();
-    let d=""+date.getDate()+"/"+(date.getMonth()+1) +"/"+date.getFullYear()+"";
+    let d=""+date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()+"";
     let profile= new CProfile({
       customer: user._id,
       customername: ""+user.firstname+" "+user.lastname+"",
