@@ -12,7 +12,7 @@ const connectDB       = require("./config/database");
 
 
 const app = express();
-app.use(cors());
+
 
 
 app.use(function(req, res, next) {
@@ -35,6 +35,7 @@ app.use("/api/payment",payment);
 app.use("/api/rating",rating);
 connectDB();
 const port = process.env.PORT || 5555;
+app.use(cors());
 app.use(cors({origin: '*'}));
 
 app.listen(port,()=> console.log(`Activating project on port ${port}...`));

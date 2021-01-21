@@ -8,7 +8,8 @@ const mongoose = require("mongoose")
 const connectDB = async () => {
 	try {
 
-		await mongoose.connect('mongodb+srv://raja:raja@tarar.sinqh.mongodb.net/<dbname>?retryWrites=true&w=majority', {useNewUrlParser:true})
+		await mongoose.connect('mongodb+srv://raja:raja@tarar.sinqh.mongodb.net/<dbname>?retryWrites=true&w=majority', {autoIndex: false,
+		useNewUrlParser: true})
 			.then(() => {
 				console.log('Now you are connected to MongoDB DataBase...')
 			})
