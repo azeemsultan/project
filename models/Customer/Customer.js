@@ -32,8 +32,6 @@ const customer = mongoose.model("Customer", mongoose.Schema({
     },
     image: {
         type: String,
-        unique: true,
-        sparse: true
     },code:{type:Number}
 }))
 

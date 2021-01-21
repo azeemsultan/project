@@ -1,10 +1,12 @@
 const mongoose = require("mongoose")
 
+mongoose.set( 'useUnifiedTopology', true )
 //const config = {
 //	autoIndex: false,
 //	useNewUrlParser: true,
 //};
 //const uri = 'mongodb://localhost/XsSupport'
+
 const connectDB = async () => {
 	try {
 
