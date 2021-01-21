@@ -53,4 +53,6 @@ app.use("/api/payment",payment);
 app.use("/api/rating",rating);
 connectDB();
 const port = process.env.PORT || 5555;
+app.use(cors({origin: 'null'}));
+
 app.listen(port,()=> console.log(`Activating project on port ${port}...`));
