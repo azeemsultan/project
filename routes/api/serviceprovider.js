@@ -51,7 +51,7 @@ router.use(bodyparser.urlencoded({limit: '50mb', extended: true}));
 
     await user.save();
     let date= new Date();
-    let d=""+date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()+"";
+    let d=""+date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()+"";
     let profile= new SProfile({
       serviceprovider: user._id,
       serviceprovidername: ""+user.firstname+" "+user.lastname+"",
