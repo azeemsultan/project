@@ -14,7 +14,7 @@ const connectDB       = require("./config/database");
 const app = express();
 app.use(cors());
 
-app.use(function(req,res,next)
+/*app.use(function(req,res,next)
 {
     res.header('Access-Control-Allow-Origin', "*");
  res.header("Access-Control-Allow-Credentials", true);
@@ -22,7 +22,7 @@ app.use(function(req,res,next)
     res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
     next();
 })
-
+*/
 app.use("/api/admin", admin);
 app.use("/api/serviceprovider", serviceprovider);
 app.use("/api/customer", customer);
