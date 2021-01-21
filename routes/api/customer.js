@@ -14,6 +14,14 @@ const cloudinary= require('./cloudinary');
 router.use(bodyparser.json({limit: '50mb', extended: true}));
 router.use(bodyparser.urlencoded({limit: '50mb', extended: true}));
 
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
+
 
 // Customer sign-up fr-
 router.post("/signup", async (req,res) => {
