@@ -82,9 +82,6 @@ router.post("/signup", async (req,res) => {
     res
       .header("x-auth-token", token)
       .header("access-control-expose-headers", "x-auth-token")
-    .header('Access-Control-Allow-Origin', "*");
- .header("Access-Control-Allow-Credentials", true);
- .header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
       .send(token);
   }
 
