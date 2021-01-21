@@ -12,16 +12,17 @@ const connectDB       = require("./config/database");
 
 
 const app = express();
+app.use(cors());
 
-
-
-app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+app.use(function(req,res,next)
+{
+    res.header('Access-Control-Allow-Origin', "*");
+ res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
     next();
-  });
+})
+
 
 
 
@@ -35,7 +36,6 @@ app.use("/api/payment",payment);
 app.use("/api/rating",rating);
 connectDB();
 const port = process.env.PORT || 5555;
-app.use(cors());
 app.use(cors({origin: '*'}));
 
 app.listen(port,()=> console.log(`Activating project on port ${port}...`));
