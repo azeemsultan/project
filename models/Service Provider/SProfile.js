@@ -28,7 +28,7 @@ const sprofile = mongoose.model("SProfile",mongoose.Schema({
     type: String,
     required:true
     },
-    imageURL:{type: String},imageCLOUDID:{  type: String,  unique: true , sparse: true},
+    imageURL:{type: String},imageCLOUDID:{  type: String},
     Latitude:{type: String},Longitude:{type: String}
 
 }));

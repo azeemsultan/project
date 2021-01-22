@@ -24,7 +24,7 @@ const cprofile = mongoose.model("CProfile",mongoose.Schema({
     required:true
 
     },
-    imageURL:{type: String},imageCLOUDID:{  type: String,  unique: true , sparse: trues},
+    imageURL:{type: String},imageCLOUDID:{  type: String},
     Latitude:{type: String},Longitude:{type: String}
 
 }));

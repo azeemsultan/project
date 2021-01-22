@@ -39,7 +39,7 @@ const serviceprovider = mongoose.model(
         required: true
     },
     image: {
-        type: String,
+        type: String,unique: true , sparse: true
     },code:{type:Number}
 }))
 
