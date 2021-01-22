@@ -177,7 +177,7 @@ router.post("/signup", async (req,res) => {
 
 
 
-    res.send(200);
+    res.sendStatus(200);
 
   });
 
@@ -202,7 +202,7 @@ router.post("/signup", async (req,res) => {
     }catch(err){
       console.log(err);
     }
-    res.send(200);
+    res.sendStatus(200);
   });
 
   
@@ -224,7 +224,7 @@ router.post("/signup", async (req,res) => {
     }catch(err){
       console.log(err);
     }
-    res.send(200);
+    res.sendStatus(200);
   });
   router.post("/del", async (req,res)=>{
     const task = await Customer.findOne({email:req.body.csearchemail});
@@ -232,7 +232,7 @@ router.post("/signup", async (req,res) => {
       const profile= await CProfile.findOne({customer:task._id})
       task.deleteOne({_id:task._id});
       profile.deleteOne({_id:profile._id});
-      res.send(200);
+      res.sendStatus(200);
   }
   else{
 
