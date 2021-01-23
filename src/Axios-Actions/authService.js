@@ -3,9 +3,10 @@ import http from "./httpService";
 
 //import { apiUrl } from "../config.json";
 //const apiEndpoint = apiUrl + "/auth";
-///const apiEndpoint = "http://localhost:5555/api";
+//const apiEndpoint = "http://localhost:5555/api";
+//const tokenKey = "token";
 
-const apiEndpoint = process.env.REACT_APP_API_URL+"/api"
+const apiEndpoint = process.env.REACT_APP_API_URL+"/api" 
 const tokenKey = "token";
 
 http.setJwt(getJwt());
@@ -28,7 +29,7 @@ export async function CustomerSignUp(
   password,
   contactno,lat,lng
 ) {
-  return await http.post("/customer/signup", {
+  return await http.post(apiEndpoint + "/customer/signup", {
     firstname,
     lastname,
     email,
@@ -44,7 +45,7 @@ export async function ServiceProviderSignUp(
     password,
     contactno,lat,lng
   ) {
-    return await http.post("/serviceprovider/signup", {
+    return await http.post(apiEndpoint + "/serviceprovider/signup", {
       firstname,
       lastname,
       email,
