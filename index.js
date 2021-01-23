@@ -37,6 +37,5 @@ app.use("/api/rating",rating);
 connectDB();
 const port = process.env.PORT || 5555;
 
-socket = io.listen(process.env.PORT);
 
 app.listen(port,()=> console.log(`Activating project on port ${port}...`));
